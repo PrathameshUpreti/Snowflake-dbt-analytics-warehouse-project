@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: raw
+    database: food_db
+    schema: raw
+
+    tables:
+      - name: customers
+      - name: restaurants
+      - name: riders
+      - name: orders
+
+  - name: snapshots
+    database: food_db
+    schema: snapshots
+
+    tables:
+      - name: customers_snapshot
+      - name: rider_snapshot
+      - name: restaurants_snapshot
+
