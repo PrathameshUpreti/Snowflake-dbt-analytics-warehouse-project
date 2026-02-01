@@ -1,15 +1,46 @@
-Welcome to your new dbt project!
+# 🍔 Food Delivery Analytics Warehouse (Snowflake + dbt)
 
-### Using the starter project
+An end-to-end Analytics Engineering project that builds a modern data warehouse using Snowflake and dbt.
 
-Try running the following commands:
-- dbt run
-- dbt test
+This project demonstrates how raw data is transformed into analytics-ready tables using staging, marts, snapshots, and KPI layers.
 
+---
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## 🚀 Architecture
+
+S3 → Snowflake (RAW) → STAGING → SNAPSHOTS (SCD2) → MARTS → ANALYTICS → BI Dashboard
+
+### Layers
+
+1. **RAW**
+   - Ingested from S3 using COPY INTO
+
+2. **STAGING**
+   - Data cleaning & standardization
+   - Views only
+
+3. **SNAPSHOTS**
+   - SCD Type 2 history tracking
+   - Customer/Rider/Restaurant changes tracked over time
+
+4. **MARTS**
+   - Star schema (Fact + Dimensions)
+   - Incremental fact models
+
+5. **ANALYTICS**
+   - Pre-aggregated KPI tables for dashboards
+
+---
+
+## 🧱 Tech Stack
+
+- Snowflake (Data Warehouse)
+- dbt (Transformations)
+- SQL
+- Power BI (Visualization)
+- Git/GitHub
+
+---
+
+## 📂 Project Structure
+
